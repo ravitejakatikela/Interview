@@ -1,0 +1,139 @@
+Aws login :
+
+https://eu-north-1.console.aws.amazon.com/console/home?nc2=h_ct&region=eu-north-1&src=header-signin#
+
+username : ravi.chiru123@gmail.com
+Sachin@2023
+
+Github :
+Email : ravi.chiru123@gmail.com
+username: ravitejakatikela
+Rohit!2023
+
+my jenkins :
+
+url : http://13.49.246.100:8080/
+username : ravitejakatikela
+Rohit!2023
+
+dockerhub :
+Email : ravi.chiru123@gmail.com
+username: ravitejakatikela
+Rohit!2023
+
+Redhat :
+tejakattikela
+teja.kattikela@gmail.com
+Rohit!2023
+
+CLI : To connect to AWS console :
+
+ssh -i /home/RaVee/Desktop/Devops/testkey.pem ubuntu@18.234.109.240
+
+* Try creating AWS EC2 instance from CLI. syntax below.
+
+url : https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/run-instances.html
+
+aws configure
+AWS Access Key ID [****************D7JX]: AKIA2GAFCSDVAO5FD7JX
+AWS Secret Access Key [****************0PVJ]: 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
+Default region name [EMEA]: us-east-1
+Default output format [json]:
+
+
+aws ec2 run-instances --image-id ami-0abcdef1234567890 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+
+***********************************************************************************
+
+Day 7 :
+
+list of s3 buckets
+aws s3 ls
+
+Print list of ec2 instances
+aws ec2 describe-instances
+
+
+Print list of Lambda functions
+aws lambda list-functions
+
+
+Print list of IAM users
+aws iam list-users
+
+To get only instance id from EC2 instances
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+if jq doesnt work and get bash: jq: command not found, just run below command
+
+curl -L -o /usr/bin/jq.exe https://github.com/stedolan/jq/releases/latest/download/jq-win64.exe
+
+
+to install jq :
+
+sudo apt install jq -y
+
+
+******************************************************************************************************************
+
+Day 14 :
+Ansible interview questions :
+https://www.youtube.com/watch?v=j5PgN0J3d7M&t=4s
+
+Ansible examples git hub :
+
+https://github.com/ansible/ansible-examples
+
+*************************************************************************************************
+Day 17 :
+
+git hub : https://github.com/iam-veeramalla/write_your_first_terraform_project
+
+doc : https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+To install terraform :
+
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+
+
+*************************************************************************************************************
+
+Day 19 :
+
+jenkins step by step : git hub doc : 
+
+https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero/tree/main
+
+
+see video :
+
+https://www.youtube.com/watch?v=ogrx8G8pClQ
+
+
+***********************************************************************************************************
+
+Day 27 : Docker Volumes for more info
+
+https://docs.docker.com/storage/volumes/
+
+
+*****************************************************************************************
+
+Day 33:
+
+kubectl install : https://www.youtube.com/watch?v=G9MmLUsBd3g
+https://www.youtube.com/watch?v=xNefZ51jHKg : minikube installation
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/ : kubectl commands
+
+
+********************************************************************************************
+
+AWS : Day 10 :
+
+aws ec2 run-instances --image-id ami-0c7217cdde317cfec --count 1 --instance-type t2.micro --key-name testkeypair --security-group-ids sg-0eca4adbaf8c0afeb --subnet-id subnet-0b1bf639182e70863 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=DemoCLI}]'
+
+aws ec2 describe-instances ( to list instances )
+
+

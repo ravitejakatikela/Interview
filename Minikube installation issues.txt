@@ -1,0 +1,37 @@
+First install docker before installing minikube :
+
+https://docs.docker.com/desktop/install/windows-install/
+
+dockerdesktop for wondows : next.....
+
+go to : https://minikube.sigs.k8s.io/docs/start/
+
+use powershell :
+
+New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+
+run as admin :
+
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+}
+
+
+minikube start
+minikube status 
+
+if any error ,
+1) we need to have default
+docker context ls 
+ouput : defualt should be available
+
+if not available ( docker context create default ) : to create default docker context 
+
+2) we need to use default docker context
+
+docker context use default
+
+then try minikube status
+
